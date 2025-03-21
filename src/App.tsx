@@ -214,7 +214,7 @@ function App() {
               </div>
             </div>
             <div>
-              <h3 className="text-warning">First to 10 Wins</h3>
+              <h3 className="text-warning">First to 10 Wins.</h3>
             </div>
             {!winner && (
               <button
