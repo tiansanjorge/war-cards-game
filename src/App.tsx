@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Deck, CardsDrawn } from "./types";
 
-
 interface AppState {
   deckId: string;
   pcCounter: number;
@@ -24,15 +23,12 @@ interface AppState {
 function App() {
   const [deckId, setDeckId] = useState<AppState["deckId"]>("");
   const [pcCounter, setPcCounter] = useState<AppState["pcCounter"]>(0);
-  const [globalPcCounter, setGlobalPcCounter] = useState<
-    AppState["globalPcCounter"]
-  >(0);
-  const [playerCounter, setPlayerCounter] = useState<AppState["playerCounter"]>(
-    0
-  );
-  const [globalPlayerCounter, setGlobalPlayerCounter] = useState<
-    AppState["globalPlayerCounter"]
-  >(0);
+  const [globalPcCounter, setGlobalPcCounter] =
+    useState<AppState["globalPcCounter"]>(0);
+  const [playerCounter, setPlayerCounter] =
+    useState<AppState["playerCounter"]>(0);
+  const [globalPlayerCounter, setGlobalPlayerCounter] =
+    useState<AppState["globalPlayerCounter"]>(0);
   const [cardsDrawn, setCardsDrawn] = useState<AppState["cardsDrawn"]>(false);
   const [draw, setDraw] = useState<AppState["draw"]>(true);
   const [roundWinner, setRoundWinner] = useState<AppState["roundWinner"]>("");
@@ -40,12 +36,10 @@ function App() {
   const [pcCard, setPcCard] = useState<AppState["pcCard"]>({});
   const [winner, setWinner] = useState<AppState["winner"]>("");
   const [game, setGame] = useState<AppState["game"]>(false);
-  const [playerImgLoaded, setPlayerImgLoaded] = useState<
-    AppState["playerImgLoaded"]
-  >(false);
-  const [pcImgLoaded, setPcImgLoaded] = useState<AppState["pcImgLoaded"]>(
-    false
-  );
+  const [playerImgLoaded, setPlayerImgLoaded] =
+    useState<AppState["playerImgLoaded"]>(false);
+  const [pcImgLoaded, setPcImgLoaded] =
+    useState<AppState["pcImgLoaded"]>(false);
 
   // Fetching a new deck from a French-suited playing cards API every new game
   useEffect(() => {
@@ -144,7 +138,7 @@ function App() {
       setDraw(true);
       setPlayerImgLoaded(false);
       setPcImgLoaded(false);
-    }else {
+    } else {
       setRoundWinner("Draw");
       setDraw(true);
       setPlayerImgLoaded(false);
@@ -168,7 +162,7 @@ function App() {
     setPcCounter(0);
     setPlayerCounter(0);
     setCardsDrawn(false);
-    setDraw(true)
+    setDraw(true);
     setPlayerCard({});
     setPcCard({});
     setPlayerImgLoaded(false);
@@ -219,13 +213,23 @@ function App() {
                 </div>
               </div>
             </div>
+            <div>
+              <h3 className="text-warning">First to 10 Wins</h3>
+            </div>
             {!winner && (
-              <button onClick={drawCard} className="my-3 col-2 mx-auto rounded" disabled={!draw}>
+              <button
+                onClick={drawCard}
+                className="my-3 col-2 mx-auto rounded"
+                disabled={!draw}
+              >
                 Draw Cards
               </button>
             )}
             {winner && (
-              <button onClick={newGame} className="mb-2 mt-5 col-2 mx-auto rounded">
+              <button
+                onClick={newGame}
+                className="mb-2 mt-5 col-2 mx-auto rounded"
+              >
                 Next Game
               </button>
             )}
@@ -273,12 +277,12 @@ function App() {
                   )}
                 </div>
                 <div className="col-2 d-flex flex-column justify-content-center text-white">
-                {winner && (
-                  <div className="d-flex flex-column mx-auto text-white">
-                    <h2> Round Winner</h2>
-                    <h1 className="text-warning">{winner}</h1>
-                  </div>
-                )}
+                  {winner && (
+                    <div className="d-flex flex-column mx-auto text-white">
+                      <h2> Round Winner</h2>
+                      <h1 className="text-warning">{winner}</h1>
+                    </div>
+                  )}
                 </div>
                 <div className="col-5 d-flex flex-column">
                   <h4>PC</h4>
