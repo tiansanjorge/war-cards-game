@@ -279,7 +279,7 @@ function App() {
                 <div className="col-2 d-flex flex-column justify-content-center text-white">
                   {winner && (
                     <div className="d-flex flex-column mx-auto text-white">
-                      <h2> Round Winner</h2>
+                      <h2>Round Winner</h2>
                       <h1 className="text-warning">{winner}</h1>
                     </div>
                   )}
