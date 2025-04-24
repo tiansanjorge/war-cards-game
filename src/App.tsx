@@ -178,7 +178,7 @@ function App() {
     }
   };
 
-  // ----
+  // - add .
 
   return (
     <div className="App">
